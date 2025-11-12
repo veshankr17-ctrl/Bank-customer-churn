@@ -1,0 +1,24 @@
+# Python
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and models
+data/processed/
+models/
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
