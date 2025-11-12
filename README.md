@@ -25,3 +25,6 @@ This repository contains an end-to-end churn analysis and prediction project: da
 - Spain shows highest churn rate among countries  
 - Inactive members are more likely to churn  
 
+##  Data Processing
+- Processed train/test CSVs saved in data/processed/
+
