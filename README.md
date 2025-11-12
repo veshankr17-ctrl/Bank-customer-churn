@@ -1,30 +1,62 @@
-# Bank Customer Churn Prediction
+# Bank Customer Churn Analysis & Prediction
 
-*One-line:* Predict which bank customers are likely to close their accounts and recommend retention actions.
+## Project Overview
+Banks lose revenue when customers close their accounts — this is called *customer churn*.  
+This project simulates a real-world data analyst workflow to identify reasons for churn and predict at-risk customers.
 
-## Project overview
-This repository contains an end-to-end churn analysis and prediction project: data, EDA notebook, modeling notebook, trained model, report figures and a simple demo.
+*Key Goals:*
+- Understand patterns in customer churn
+- Build predictive models to identify at-risk customers
+- Provide actionable insights to improve customer retention
 
-## Deliverables
-- data/ — raw and processed datasets
-- notebooks/ — 01_EDA.ipynb, 02_modeling.ipynb
-- src/ — helper modules (data loading, feature engineering, model utils)
-- models/ — saved model artifacts (e.g., best_model.pkl)
-- reports/ — figures, presentation, insights
-- requirements.txt — Python dependencies
+## Dataset
+- Contains bank customer information: age, balance, credit score, geography, account activity
+- Columns include: CustomerId, CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary, Exited (target)
+- Source: Simulated dataset for educational purposes
 
-## Quick run (high level)
-1. Open the notebooks in Jupyter.
-2. Install dependencies from requirements.txt.
-3. Run notebooks/01_EDA.ipynb then notebooks/02_modeling.ipynb.
+## Project Workflow
 
-##  EDA Insights
+### 1. Data Preparation
+- Loaded raw dataset from data/raw/
+- Checked data types, missing values, and target distribution
+- Split the dataset into *train (80%)* and *test (20%)* sets and saved in data/processed/:
+  - train_processed.csv  
+  - test_processed.csv  
 
-- Total customers: 10,000  
-- Churn rate: 20%  
-- Spain shows highest churn rate among countries  
-- Inactive members are more likely to churn  
+### 2. Exploratory Data Analysis (EDA)
+- Visualized distributions of numeric and categorical variables
+- Checked correlations between features and target
+- Insights discovered:
+  - Higher balances and lower credit scores linked to higher churn
+  - Age and tenure showed patterns in churn probability
+- Created charts for GitHub/LinkedIn:
+  - Histograms, boxplots, heatmaps, correlation matrices
 
-##  Data Processing
-- Processed train/test CSVs saved in data/processed/
+### 3. Model Building
+- *Baseline Model:* Logistic Regression  
+  - Evaluated with Accuracy, Precision, Recall, F1 Score, and ROC-AUC
+- *Advanced Model:* Random Forest Classifier  
+  - Captured nonlinear patterns, outperformed Logistic Regression
+  - Plotted *top 10 feature importance* for readability
 
+*Top Features:*  
+- Balance  
+- CreditScore  
+- Age  
+- Tenure  
+- IsActiveMember
+
+### 4. Model Evaluation
+| Model | Accuracy | Precision | Recall | F1 Score | ROC AUC |
+|-------|---------|-----------|--------|----------|---------|
+| Logistic Regression | 0.81 | 0.68 | 0.52 | 0.59 | 0.85 |
+| Random Forest | 0.87 | 0.76 | 0.63 | 0.69 | 0.92 |
+
+Replace metrics with your actual results
+
+- Random Forest showed better overall performance
+- Confusion matrices and feature importance charts used for insights
+
+### 5. Model Saving
+- Trained Random Forest model saved locally as models/rf_churn_model.pkl
+- *Not uploaded to GitHub* due to file size limits; available upon request
