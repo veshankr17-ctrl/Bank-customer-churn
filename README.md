@@ -17,6 +17,3 @@ This repository contains an end-to-end churn analysis and prediction project: da
 1. Open the notebooks in Jupyter.
 2. Install dependencies from requirements.txt.
 3. Run notebooks/01_EDA.ipynb then notebooks/02_modeling.ipynb.
-
-## Contact
-Your Name — your.email@example.com
