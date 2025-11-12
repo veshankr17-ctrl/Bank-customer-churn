@@ -18,7 +18,7 @@ This repository contains an end-to-end churn analysis and prediction project: da
 2. Install dependencies from requirements.txt.
 3. Run notebooks/01_EDA.ipynb then notebooks/02_modeling.ipynb.
 
-## 🧠 EDA Insights
+##  EDA Insights
 
 - Total customers: 10,000  
 - Churn rate: 20%  
